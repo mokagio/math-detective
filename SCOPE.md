@@ -120,6 +120,9 @@ A game inspired by Nerdle where you guess the equation, with configurable equati
 20. **The code lives in a public GitHub repository, `mokagio/math-detective`, with work going straight to `main`.**
     Because it's public, anyone can read the puzzle lists, just as with Nerdle.
     The first commit is this file plus an `AGENTS.md` with the build, test and publish commands.
+21. **The site is public on Spacefast, at https://math-detective.space.fast/, and tells search engines not to index it.**
+    Public means the kids can play without signing in, and it costs nothing on the Free plan.
+    The `noindex` tag keeps strangers from finding it in search results.
 
 ## Findings
 
