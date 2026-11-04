@@ -8,7 +8,7 @@
   --present: #e0b13a;
   --absent: #8d867b;
   --gap: 0.4rem;
-  --keyboard-height: 8.5rem;
+  --keyboard-height: 12.3rem;
 
   font-family: 'Courier Prime', 'Courier New', monospace;
   color: var(--ink);
@@ -204,9 +204,39 @@ select {
   justify-content: center;
 }
 
+.digits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
 .keys {
   display: flex;
   gap: 0.3rem;
+}
+
+/* Wide screens fit all ten digits on one row. */
+@media (min-width: 600px) {
+  :root {
+    --keyboard-height: 8.5rem;
+  }
+
+  .digits {
+    flex-direction: row;
+    gap: 0.3rem;
+  }
+
+  .digits .keys {
+    flex: 1;
+  }
+
+  .keys .key.narrow {
+    display: none;
+  }
+
+  .keys .key.wide-screen {
+    display: block;
+  }
 }
 
 .key {
@@ -245,8 +275,13 @@ select {
   height: 2rem;
 }
 
-.key.power {
-  font-size: 2rem;
+.key .base {
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.key.wide-screen {
+  display: none;
 }
 
 .key.wide {
