@@ -66,16 +66,25 @@ A game inspired by Nerdle where you guess the equation, with configurable equati
       A script I run generates each preset's full list ahead of time, filters out trivial equations, and the app ships the lists as data.
     - The custom-settings screen comes after the MVP and uses random generation in the browser, which reports "plenty" or "only N found" instead of an exact count.
     Full lists are small (about 6,500 equations is roughly 60 KB), so they aren't capped at 100.
-11. **The three MVP presets:**
+11. **The MVP presets:**
 
-    | Preset | Tiles | Operators | Range | Operator count | Answer |
-    |---|---|---|---|---|---|
-    | Little | 7 | `+ -` | 0–99 | exactly 1 | right |
-    | Classic | 8 | `+ − × ÷` | 0–99 | 1–3 | right |
-    | Stretch | 8 | `+ − × ÷ ² ³` | 0–999 | 1–3 | either side |
+    | Preset | Tiles | Operators | Range | Operator count | Answer | Puzzles |
+    |---|---|---|---|---|---|---|
+    | Little-5 | 5 | `+ -` | 0–99 | exactly 1 | right | 72 |
+    | Little-6 | 6 | `+ -` | 0–99 | exactly 1 | right | 90 |
+    | Little-7 | 7 | `+ -` | 0–99 | exactly 1 | right | 3,060 |
+    | Classic | 8 | `+ − × ÷` | 0–99 | 1–3 | right | ≈13,400 |
+    | Stretch | 8 | `+ − × ÷ ² ³` | 0–999 | 1–3 | either side | ≈28,000 |
 
-    At 6 tiles, Little would have only 90 equations, in two shapes.
+    Each Little preset has a fixed set of possible layouts, one per row below.
+    The counts are after filtering out trivial answers:
+    - Little-5: `n+n=n` and `n-n=n`, 36 each.
+    - Little-6: `n+n=nn` and `nn-n=n`, 45 each.
+    - Little-7: `n+nn=nn`, `nn+n=nn`, `nn-n=nn` and `nn-nn=n`, 765 each.
+    Offering three lengths varies them.
+    Little-5 and Little-6 match Nerdle Micro and Nerdle Mini in size, but use only `+` and `-`.
     Classic and Stretch match Nerdle's 8 tiles.
+
 12. **Hidden answers never contain trivial steps.**
     That means no `+0` or `-0`, no `×0` or `0÷`, no `×1` or `÷1`, and no `n-n`.
     Guesses may still use them.
@@ -119,7 +128,7 @@ A game inspired by Nerdle where you guess the equation, with configurable equati
 - **Many generated equations are trivial**, like `7+0÷14=7`.
   Decision 12 settles which ones are filtered out.
 - **Rough equation counts per preset** (the `n-n` filter and Stretch's either-side copies weren't applied yet):
-  - Little: 3,150 after filtering (3,420 before).
+  - Little (7 tiles, before Little-5 and Little-6 were added): 3,150 after filtering (3,420 before).
   - Classic: 13,409 after filtering (34,510 before).
   - Stretch: 28,031 after filtering (63,829 before), taking about 104 s to generate. That's fine for an offline script.
 - **Stretch rarely includes `²` or `³`.**
