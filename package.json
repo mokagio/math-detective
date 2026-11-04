@@ -11,7 +11,8 @@
     "test:watch": "vitest",
     "generate": "node scripts/generate-puzzles.ts",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "deploy": "npm run build && sf publish ./dist -y"
   },
   "dependencies": {
     "@fontsource/courier-prime": "^5.3.0",
@@ -22,6 +23,7 @@
     "@preact/preset-vite": "^2.10.6",
     "@types/node": "^24.19.2",
     "prettier": "^3.9.10",
+    "spacefast": "^0.8.0",
     "typescript": "~7.0.2",
     "vite": "^8.3.5",
     "vitest": "^5.1.0"

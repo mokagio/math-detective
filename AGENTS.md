@@ -18,3 +18,4 @@ Game logic (parse, evaluate, validate, feedback) and the offline puzzle-generato
 - `npm run build` — type-check and build to `dist/`.
 - `npm run generate` — regenerate `src/puzzles/*.json` from the presets; commit the output.
 - `npm run format` — Prettier; Markdown is excluded to keep semantic line breaks.
+- `npm run deploy` — build and publish to Spacefast (`.spacefast/space.json` links the space; needs `sf login` once).
