@@ -73,8 +73,8 @@ A game inspired by Nerdle where you guess the equation, with configurable equati
     | Little-5 | 5 | `+ -` | 0–99 | exactly 1 | right | 72 |
     | Little-6 | 6 | `+ -` | 0–99 | exactly 1 | right | 90 |
     | Little-7 | 7 | `+ -` | 0–99 | exactly 1 | right | 3,060 |
-    | Classic | 8 | `+ − × ÷` | 0–99 | 1–3 | right | ≈13,400 |
-    | Stretch | 8 | `+ − × ÷ ² ³` | 0–999 | 1–3 | either side | ≈28,000 |
+    | Classic | 8 | `+ − × ÷` | 0–99 | 1–3 | right | 13,339 |
+    | Stretch | 8 | `+ − × ÷ ² ³` | 0–999 | 1–3 | either side | 41,922 |
 
     Each Little preset has a fixed set of possible layouts, one per row below.
     The counts are after filtering out trivial answers:
@@ -84,9 +84,11 @@ A game inspired by Nerdle where you guess the equation, with configurable equati
     Offering three lengths varies them.
     Little-5 and Little-6 match Nerdle Micro and Nerdle Mini in size, but use only `+` and `-`.
     Classic and Stretch match Nerdle's 8 tiles.
+    `²` and `³` count towards the operator count, so `125=5³` has one operator.
+    Stretch's count includes the answer-first copies.
 
 12. **Hidden answers never contain trivial steps.**
-    That means no `+0` or `-0`, no `×0` or `0÷`, no `×1` or `÷1`, and no `n-n`.
+    That means no `+0` or `-0`, no `×0` or `0÷`, no `×1`, `1×` or `÷1`, no `n-n`, and no powers of 0 or 1.
     Guesses may still use them.
     Zero still appears inside numbers and as an answer.
 13. **Players get 6 attempts, then the answer is revealed, as in Nerdle.**
