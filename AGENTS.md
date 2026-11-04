@@ -12,5 +12,9 @@ Game logic (parse, evaluate, validate, feedback) and the offline puzzle-generato
 
 ## Commands
 
-Not scaffolded yet.
-Add the install, dev, test, generate-puzzles, and publish commands here as they land.
+- `npm install`
+- `npm run dev` — local dev server.
+- `npm test` — Vitest, single run.
+- `npm run build` — type-check and build to `dist/`.
+- `npm run generate` — regenerate `src/puzzles/*.json` from the presets; commit the output.
+- `npm run format` — Prettier; Markdown is excluded to keep semantic line breaks.
