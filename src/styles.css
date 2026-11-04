@@ -4,8 +4,8 @@
   --ink: #1e1a16;
   --ink-soft: #5a5148;
   --stamp: #a3262a;
-  --correct: #2c4f7c;
-  --present: #c88f2a;
+  --correct: #3b7a3e;
+  --present: #e0b13a;
   --absent: #8d867b;
   --gap: 0.4rem;
   --keyboard-height: 8.5rem;
@@ -231,9 +231,18 @@ select {
 }
 
 .key.correct,
-.key.present,
 .key.absent {
   color: var(--paper-light);
+}
+
+.tile.present,
+.key.present {
+  color: var(--ink);
+}
+
+.key svg {
+  width: 2rem;
+  height: 2rem;
 }
 
 .key.power {

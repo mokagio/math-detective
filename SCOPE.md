@@ -99,7 +99,9 @@ A game inspired by Nerdle where you guess the equation, with configurable equati
 15. **Feedback follows the standard Wordle and Nerdle conventions.** (Proposed; the user can object.)
     - Each tile shows one of three colours: right place, in the answer but elsewhere, or not in the answer.
     - When a guess repeats a symbol, only as many of those tiles get coloured as the answer actually contains.
-    - The colour scheme stays readable for colour-blind players.
+    - The colours are green, yellow and grey, as in Wordle.
+      Blue and orange, chosen at first for colour-blind safety, didn't read as "right" to players.
+      The difference in brightness between green, yellow and grey keeps them distinguishable.
     - The on-screen keyboard shows each key's best result so far, and a physical keyboard also works.
 16. **The stack is Vite, TypeScript and Preact. The MVP is a static site on Spacefast; the Zero runtime isn't used.**
     The game rules (parse, evaluate, validate, colour feedback) and the puzzle-generation script are plain TypeScript, separate from the interface code, and tested with Vitest.
